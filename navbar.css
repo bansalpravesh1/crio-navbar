@@ -32,6 +32,7 @@ body{
     display: block;
     padding: 15px;
     background-color: inherit;
+    position: relative;
   }
  
   .elements li a:hover, .dropdown:hover .dropbtn {
@@ -106,6 +107,7 @@ body{
  .buttons li {
     float: right;
    padding: 0% 0.5%;
+   position: relative;
   }
   .button1{
     background-color: white;
@@ -167,4 +169,104 @@ body{
     right: -50%;
     top: -50%;
     transform: rotate(60deg) translate(-5em, 7.5em);
+}
+
+.navbar .menu i {
+  color: #000;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+input[type="checkbox"] {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .navbar {
+      padding: 0 40px 0 50px;
+  }
+}
+
+
+@media (max-width: 900px) {
+  .navbar .menu i {
+      display: block;
+      margin-top: 1rem;
+      float: right;
+  }
+  #check:checked~.menu i:before {
+    content: "\f00d";
+}
+.navbar ul {
+  position: fixed;
+  top: 80px;
+  left: -110%;
+  height: 80vh;
+  width: 100%;
+  display: block;
+  transition: all 0.3s ease;
+  overflow: auto;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.example::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.example {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+hr{
+    display: none;
+}
+.dropdown-content p{
+    display: none;
+}
+.dropdown{
+    float: none;
+    display: block;
+}
+.dropdown .dropbtn{
+  background-color: inherit;
+}
+.dropdown-content{
+    background-color: rosybrown;
+    width: 80vw;
+    overflow-x: hidden;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    top: 0;
+    box-shadow: none;
+    display: block;
+    position: relative;
+}
+.dropdown-content a{
+    font-size: 1rem;
+}
+
+#check:checked~div ul{
+    left: 0;
+}
+div ul li {
+    width: 100%;
+    margin: 5px 0;
+    text-align: left;
+}
+div ul li a {
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+#check:checked~div ul li a {
+        margin-left: 0px;
+}
+div ul li a.active, div ul li a:hover {
+        background: none;
+        opacity: 1;
+    }
+    .buttons{
+        display: none;
+    }
 }
